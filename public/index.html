@@ -11,9 +11,20 @@
 
 	<div class='container'>
 		<h1>{{hello}}</h1>
+		<form ng-submit="postChat">
+			<input type="" placeholder="Enter your chat" ng-model="newChat">
+			<button type="button" class="btn btn-success">Send message</button>
+		</form>
+	</div>
+		<br>
+	<div class="container">
+		<button ng-click="getChat()" type="button" class="btn btn-primary">Get Chats</button>
 	</div>	
+	<div ng-repeat="chats in chat" class="container">
+		<h2>Chat Body: {{chats.body}}</h2>
+		<h2>Chat Date: {{chats.date}}</h2>
+	</div>
 	
-
 		
 	<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
