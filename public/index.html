@@ -11,15 +11,21 @@
 
 	<div class='container'>
 		<h1>{{hello}}</h1>
-		<form ng-submit="postChat">
-			<input type="" placeholder="Enter your chat" ng-model="newChat">
-			<button type="button" class="btn btn-success">Send message</button>
+
+
+		<form>
+			<input placeholder="Enter your chat" ng-model="newChat">
+			<button ng-click="postChat(newChat)" type="button" class="btn btn-success">Send message</button>
 		</form>
+
 	</div>
 		<br>
 	<div class="container">
-		<button ng-click="getChat()" type="button" class="btn btn-primary">Get Chats</button>
+		<button ng-click="clearChat()" type="button" class="btn btn-primary">Clear Chats</button>
 	</div>	
+	<!-- <div class="container">
+		<button ng-click="getChat()" type="button" class="btn btn-primary">Get Chats</button>
+	</div>	 -->
 	<div ng-repeat="chats in chat" class="container">
 		<h2>Chat Body: {{chats.body}}</h2>
 		<h2>Chat Date: {{chats.date}}</h2>
