@@ -16,6 +16,7 @@ app.post('/chat', chatCtrl.create);
 app.get('/chat', chatCtrl.read);
 app.put('/chat/:id', chatCtrl.update);
 app.delete('/chat', chatCtrl.delete);
+app.delete('/chat/:id', chatCtrl.deleteById);
 
 var mongoUri = "mongodb://localhost:27017/chatApp";
 mongoose.connect(mongoUri);

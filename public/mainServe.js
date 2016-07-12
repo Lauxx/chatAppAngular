@@ -44,4 +44,14 @@ angular.module('chatApp').service('chatServe', function($http){
 		})
 	};
 
+	this.deleteChat = function(chats){
+		return $http({
+			method: 'DELETE', 
+			url: '/chat/' + chats._id
+		}).then(function(res){
+			console.log(res.data, 'i am service delete one data');
+			return res.data
+		})
+	};
+
 });

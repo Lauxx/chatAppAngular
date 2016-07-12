@@ -41,4 +41,13 @@ angular.module('chatApp').controller('chatController', function($scope, chatServ
 			$scope.getChat();
 		})
 	};
+
+	$scope.removeChat;
+	$scope.deleteChat = function(chats){
+		chatServe.deleteChat(chats).then(function(res){
+			$scope.removeChat = res;
+			console.log($scope.removeChat, 'i am control delete one data');
+			$scope.getChat();
+		})
+	}
 });
