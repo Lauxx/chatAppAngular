@@ -29,7 +29,7 @@
 	<div ng-repeat="chats in chat" class="container">
 		<form>
 			<h2 ng-hide="pickles1" ng-dblclick="pickles1=true">Chat Body: {{chats.body}}</h2><input type="" name="" ng-show="pickles1" ng-model="chats.body"><button type="button" class="btn btn-primary" ng-show="pickles1" ng-click="editChat(chats)">Edit</button>
-			<h2 ng-hide="pickles2" ng-dblclick="pickles2=true">Chat Date: {{chats.date}}</h2><input type="" name="" ng-show="pickles2" ng-model="chats.date">
+			<h2>Chat Date: {{chats.date}}</h2><!-- <input type="" name="" ng-show="pickles2" ng-model="chats.date"> -->
 		<!-- <h2>Id: {{chats._id}}</h2> -->
 		</form>
 	</div>
