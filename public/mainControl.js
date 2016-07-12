@@ -1,16 +1,13 @@
 angular.module('chatApp').controller('chatController', function($scope, chatServe){
 	$scope.hello = chatServe.welcome;
 
-	setInterval(function(){
-      $scope.getChat();
-    }, 1000);
+	
 
 	
 	$scope.postChat = function(chat){
 		var newChat = {
 			body: chat
 		};
-
 		chatServe.postChat(newChat).then(function(res){
 			console.log(res, 'i am control post data');
 			$scope.newChat = "";
@@ -18,13 +15,16 @@ angular.module('chatApp').controller('chatController', function($scope, chatServ
 		})
 	};
 
+
 	$scope.chat;
 	$scope.getChat = function(){
 		chatServe.getChat().then(function(res){
 			$scope.chat = res;
-			console.log($scope.chat, 'i am control data');
+			console.log($scope.chat, 'i am control get data');
 		})
 	};
+
+	$scope.getChat();
 
 	$scope.clearChat = function(){
 		chatServe.clearChat().then(function(res){
@@ -33,4 +33,12 @@ angular.module('chatApp').controller('chatController', function($scope, chatServ
 		})
 	};
 
+	$scope.putChat;
+	$scope.editChat = function(chats){
+		chatServe.editChat(chats).then(function(res){
+			$scope.putChat = res;
+			console.log($scope.putChat, 'i am control put data');
+			$scope.getChat();
+		})
+	};
 });

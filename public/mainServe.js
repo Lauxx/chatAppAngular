@@ -33,4 +33,15 @@ angular.module('chatApp').service('chatServe', function($http){
 		})
 	};
 
+	this.editChat = function(chats){
+		return $http({
+			method: 'PUT', 
+			url: '/chat/' + chats._id,
+			data: chats
+		}).then(function(res){
+			console.log(res.data, 'i am service put data');
+			return res.data
+		})
+	};
+
 });
