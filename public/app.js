@@ -1,5 +1,7 @@
 angular.module('chatApp', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider){
+
+	
 	$stateProvider
 	.state("list", {
 		url:"/",
