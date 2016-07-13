@@ -1,13 +1,12 @@
 angular.module('chatApp').controller('chatController', function($scope, chatServe){
 	$scope.hello = chatServe.welcome;
-
-	
-
 	
 	$scope.postChat = function(chat){
+		
 		var newChat = {
 			body: chat
 		};
+		
 		chatServe.postChat(newChat).then(function(res){
 			console.log(res, 'i am control post data');
 			$scope.newChat = "";
