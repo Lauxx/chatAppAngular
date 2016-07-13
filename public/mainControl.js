@@ -2,9 +2,10 @@ angular.module('chatApp').controller('chatController', function($scope, chatServ
 	$scope.hello = chatServe.welcome;
 	
 	$scope.postChat = function(chat){
-
+		$scope.today = new Date;
 		var newChat = {
-			body: chat
+			body: chat,
+			date: $scope.today.toDateString()
 		};
 		
 		chatServe.postChat(newChat).then(function(res){
