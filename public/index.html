@@ -8,42 +8,19 @@
 	
 	</head>
 	<body ng-controller="chatController">
-
-	<div class='container'>
-		<h1>{{hello}}</h1>
-
-
-		<form>
-			<input placeholder="Enter your chat" ng-model="newChat">
-			<button ng-click="postChat(newChat)" type="button" class="btn btn-success">Send message</button>
-		</form>
-
-	</div>
-		<br>
-	<div class="container">
-		<button ng-click="clearChat()" type="button" class="btn btn-primary">Clear Chats</button>
-	</div>	
-	<!-- <div class="container">
-		<button ng-click="getChat()" type="button" class="btn btn-primary">Get Chats</button>
-	</div>	 -->
-	<div ng-repeat="chats in chat" class="container">
-		<form>
-			<h2 ng-hide="pickles1" ng-dblclick="pickles1=true">Chat Body: {{chats.body}}</h2>
-
-			<input type="" name="" ng-show="pickles1" ng-model="chats.body">
-			<button type="button" class="btn btn-primary" ng-show="pickles1" ng-click="editChat(chats)">Edit</button>
-			
-
-			<h2>Chat Date: {{chats.date}}</h2><!-- <input type="" name="" ng-show="pickles2" ng-model="chats.date"> -->
-		<!-- <h2>Id: {{chats._id}}</h2> -->
-			<button ng-hide="pickles1" type="button" class="btn btn-danger" ng-click="deleteChat(chats)">Delete</button>
-		</form>
-	</div>
-	
 		
+		<div class="container">
+			<h1>{{hello}}</h1>
+		</div>
+	
+		<ui-view></ui-view>
+		
+
+
 	<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="mainControl.js"></script>
 	<script type="text/javascript" src="mainServe.js"></script>

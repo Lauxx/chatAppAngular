@@ -2,7 +2,7 @@ angular.module('chatApp').controller('chatController', function($scope, chatServ
 	$scope.hello = chatServe.welcome;
 	
 	$scope.postChat = function(chat){
-		
+
 		var newChat = {
 			body: chat
 		};
@@ -48,5 +48,13 @@ angular.module('chatApp').controller('chatController', function($scope, chatServ
 			console.log($scope.removeChat, 'i am control delete one data');
 			$scope.getChat();
 		})
-	}
+	};
+
+	$scope.getOne;
+	$scope.getOneChat = function(chats){
+		chatServe.getOneChat(chats).then(function(res){
+			$scope.getOne = res;//now my key for get one router
+			console.log(res, 'i am control get one data');
+		})
+	};
 });

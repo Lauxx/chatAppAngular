@@ -54,4 +54,14 @@ angular.module('chatApp').service('chatServe', function($http){
 		})
 	};
 
+	this.getOneChat = function(chats){
+		return $http({
+			method: 'GET', 
+			url: '/chat/' + chats._id
+		}).then(function(res){
+			console.log(res.data, 'i am service get one data');
+			return res.data;
+		})
+	}
+
 });

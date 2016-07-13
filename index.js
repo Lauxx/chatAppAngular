@@ -14,6 +14,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.post('/chat', chatCtrl.create);
 app.get('/chat', chatCtrl.read);
+app.get('/chat/:id', chatCtrl.getOne);
 app.put('/chat/:id', chatCtrl.update);
 app.delete('/chat', chatCtrl.delete);
 app.delete('/chat/:id', chatCtrl.deleteById);

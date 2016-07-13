@@ -1,0 +1,30 @@
+<div class='container'>
+
+		<form>
+			<input placeholder="Enter your chat" ng-model="newChat">
+			<button ng-click="postChat(newChat)" type="button" class="btn btn-success">Send message</button>
+		</form>
+
+	</div>
+		<br>
+	<div class="container">
+		<button ng-click="clearChat()" type="button" class="btn btn-primary">Clear Chats</button>
+	</div>	
+	<!-- <div class="container">
+		<button ng-click="getChat()" type="button" class="btn btn-primary">Get Chats</button>
+	</div>	 -->
+	<div ng-repeat="chats in chat" class="container">
+		<form>
+			<h2 ng-hide="pickles1" ng-dblclick="pickles1=true">Chat Body: {{chats.body}}</h2>
+
+			<input type="" name="" ng-show="pickles1" ng-model="chats.body">
+			<button type="button" class="btn btn-primary" ng-show="pickles1" ng-click="editChat(chats)">Edit</button>
+			
+
+			<h2>Chat Date: {{chats.date}}</h2>
+			<!-- <input type="" name="" ng-show="pickles2" ng-model="chats.date"> -->
+			<!-- <h2>Id: {{chats._id}}</h2> -->
+			<button ng-hide="pickles1" type="button" class="btn btn-danger" ng-click="deleteChat(chats)">Delete</button>
+			<button type="button" class="btn btn-primary" ui-sref="one" ng-click="getOneChat(chats)">Get One Chat</button>
+		</form>
+	</div>
